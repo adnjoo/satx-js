@@ -8,7 +8,7 @@ function App() {
         <p className="mt-2 text-lg">A community for JavaScript enthusiasts in San Antonio</p>
       </header>
 
-      <main className="p-6">
+      <main className="p-6 min-h-[80vh]">
         <section className="my-8">
           <img
             src="./satx.jpg"
