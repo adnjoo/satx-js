@@ -1,6 +1,15 @@
-import { useState } from "react";
-
 function App() {
+  const recentMeetups = [
+    {
+      name: 'Unleash the Power of Userscripts: Violentmonkey Workshop',
+      url: "https://www.meetup.com/satx-js/events/305367989/"
+    },
+    {
+      name: "Building Snake with ReactJS and AI",
+      url: "https://www.meetup.com/satx-js/events/304867042/?eventOrigin=group_past_events",
+    },
+  ];
+
   return (
     <div className="font-sans">
       <header className="bg-[#f0db4f] text-[#323330] p-6 text-center">
@@ -24,14 +33,16 @@ function App() {
         <section className="my-8">
           <h2 className="text-2xl font-semibold">Recent Meetups</h2>
           <ul className="mt-4">
-            {[
-              "Building Snake with ReactJS and AI",
-            ].map((meetup, index) => (
-              <li
-                key={index}
-                className="border-b py-2 hover:text-blue-500"
-              >
-                {meetup}
+            {recentMeetups.map((meetup, index) => (
+              <li key={index} className="border-b py-2 hover:text-blue-500">
+                <a
+                  href={meetup.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  {meetup.name}
+                </a>
               </li>
             ))}
           </ul>
@@ -39,13 +50,23 @@ function App() {
       </main>
 
       <footer className="bg-[#f0db4f] text-black p-6 text-center">
-        <p className="text-sm">
-          © 2025 San Antonio JavaScript
-        </p>
+        <p className="text-sm">© 2025 San Antonio JavaScript</p>
         <div className="mt-2">
-          <a href="https://www.meetup.com/satx-js/" className="hover:underline ml-1">About</a>
+          <a
+            href="https://www.meetup.com/satx-js/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline ml-1"
+          >
+            About
+          </a>
           {" | "}
-          <a href="https://github.com/andrewnjoo/satx-js" className="hover:underline">
+          <a
+            href="https://github.com/andrewnjoo/satx-js"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
             GitHub
           </a>
         </div>
